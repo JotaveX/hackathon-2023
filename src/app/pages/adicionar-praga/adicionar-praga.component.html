@@ -1,0 +1,40 @@
+<div>
+    <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">Cultura</label>
+        <select class="form-select" id="exampleSelect1" >
+          <option *ngFor="let cultura of culturas" [value]="culturaSelecionada">{{cultura}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">Praga</label>
+        <select class="form-select" id="exampleSelect1" [(ngModel)]="pragaSelecionada" >
+          <option *ngFor="let praga of pragas">{{praga}}</option>
+        </select>
+    </div>
+    <br>
+     <google-map
+        height="450px"
+        width="100%"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="newPlague($event)"
+        (mapMousemove)="moveMap($event)">
+        <map-marker
+            #markerElem="mapMarker"
+            
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            [options]="marker.options">
+              
+            </map-marker>
+    </google-map> 
+    
+    <div *ngIf="pragaSelecionada">
+        <button type="button" class="btn btn-secondary w-50" onclick="save()">Salvar</button>
+        <button type="button" class="btn btn-secondary w-50" [routerLink]="['/']">Cancelar</button>
+    </div>
+    <br><br><br><br><br>
+    
+</div>

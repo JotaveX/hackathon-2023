@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Eduardo C Marlin</a>
+    </div>
+</nav>
+
+<div class="container"><router-outlet></router-outlet></div>
+
+<div class="toolbarNav">
+    <button type="button" class="btn btn-secondary" [routerLink]="['/']"><img src="/assets/images/warning.svg" class="" alt="image">Ocorrências</button>
+    <button type="button" class="btn btn-secondary" [routerLink]="'/add/viewProdutor'"><img src="/assets/images/add.svg" alt="image">Adicionar plantio</button>
+    <button type="button" class="btn btn-secondary" [routerLink]="'propriedade'"><img src="/assets/images/home.svg" alt="image">Propriedades</button>
+</div>

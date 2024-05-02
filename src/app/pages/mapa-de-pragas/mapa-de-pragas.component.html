@@ -1,0 +1,26 @@
+<div class="h-screen">
+
+    <google-map 
+            height="{{innerHeight}}px"
+            width="100%"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="clickMap($event)"
+            (mapMousemove)="move($event)">
+            <map-marker *ngFor="let marker of markers"
+            (mapClick)="clickMarker(marker)"
+            [position]="marker.position"
+            [title]="marker.title"
+            [options]="marker.options"
+            [icon]="marker.icon">
+            </map-marker>
+            <map-marker
+            (mapClick)="clickHouse()"
+            [position]="propriedade.position"
+            ></map-marker>
+    </google-map> 
+
+    <div class="absolute">
+      <button type="button" class="" [routerLink]="['/adicionarpraga']"><img src="/assets/images/add.svg" alt="image" [routerLink]="['/adicionarpraga']"></button>
+    </div>
+</div>
